@@ -33,11 +33,21 @@ function M.config()
   local Snacks = require("snacks")
   local wk = require "which-key"
   wk.add {
-    { "<leader><space>", Snacks.picker.smart, { desc = "Smart find files" }},
-    { "<leader>fg", Snacks.picker.grep, { desc = "Grep" }},
     { "<C-p>", Snacks.picker.files, { desc = "Find Files" }},
     { "<C-e>", function() Snacks.picker.recent() end, desc = "Recent" },
   }
+
+  wk.add {
+    { "<leader>f", group = "Find" },
+    { "<leader>fg", Snacks.picker.grep, desc = "Grep" },
+    { "<leader>fb", Snacks.picker.buffers, desc = "Buffers" },
+  }
+
+  wk.add {
+    { "<leader>s", group = "Search" },
+    { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+  }
+
 end
 
 return M
