@@ -16,7 +16,6 @@ function M.config()
       { "<leader>v", "<cmd>vsplit<CR>", desc = "Split" },
       { "<leader>b", group = "Buffers" },
       { "<leader>d", group = "Debug" },
-      { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },
       { "<leader>l", group = "LSP" },
       { "<leader>p", group = "Plugins" },
