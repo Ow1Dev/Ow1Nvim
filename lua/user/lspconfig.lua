@@ -79,7 +79,7 @@ function M.config()
     "gopls",
     "eslint",
     "ts_ls",
-    "pyright",
+    "rust_analyzer",
     "bashls",
     "jsonls",
     "yamlls",
