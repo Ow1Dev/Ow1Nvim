@@ -125,11 +125,6 @@ function M.config()
           vim_item.kind_hl_group = "CmpItemKindEmoji"
         end
 
-        if entry.source.name == "cmp_tabnine" then
-          vim_item.kind = icons.misc.Robot
-          vim_item.kind_hl_group = "CmpItemKindTabnine"
-        end
-
         return vim_item
       end,
     },
@@ -137,7 +132,6 @@ function M.config()
       { name = "copilot" },
       { name = "nvim_lsp" },
       { name = "luasnip" },
-      { name = "cmp_tabnine" },
       { name = "nvim_lua" },
       { name = "buffer" },
       { name = "path" },
