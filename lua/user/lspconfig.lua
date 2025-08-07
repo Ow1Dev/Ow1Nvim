@@ -17,13 +17,6 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "gI", "<cmd>lua require('snacks').picker.lsp_implementations()<CR>", opts)
   keymap(bufnr, "n", "gr", "<cmd>lua require('snacks').picker.lsp_references()<CR>", opts)
   keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-
-  -- keymap("n", "gd", , { desc = "Goto Definition" })
-  -- Snacks.,
-  -- keymap("n", "gD", Snacks.picker.lsp_declarations, { desc = "Goto Declaration" })
-  -- keymap("n", "gr", Snacks.picker.lsp_references, { desc = "References" })
-  -- keymap("n", "gI", Snacks.picker.lsp_implementations, { desc = "Goto Implementation" })
-  -- keymap("n", "gy", Snacks.picker.lsp_type_definitions, { desc = "Goto Type Definitions" })
 end
 
 M.on_attach = function(client, bufnr)
