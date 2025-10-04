@@ -2,7 +2,6 @@ local M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "folke/neodev.nvim",
     "saghen/blink.cmp",
   },
 }
@@ -14,7 +13,7 @@ function M.config()
   )
 
   -- Configure and enable LSP servers
-  for _, server in ipairs({ "lua_ls" }) do
+  for _, server in ipairs({ "lua_ls", "nixd" }) do
     vim.lsp.config[server] = {
       capabilities = default_capabilities,
       root_dir = vim.fs.root(0, { ".git" }),

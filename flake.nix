@@ -21,7 +21,13 @@
 
         myNeovim = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (neovimConfig // {
           wrapperArgs = neovimConfig.wrapperArgs ++ [
-            "--prefix" "PATH" ":" "${pkgs.lib.makeBinPath [ pkgs.git pkgs.lua-language-server ]}"
+            "--prefix" "PATH" ":" "${pkgs.lib.makeBinPath [ 
+                 pkgs.git
+                 pkgs.fd 
+                 pkgs.rustup
+                 pkgs.lua-language-server
+                 pkgs.nixd
+                 ]}"
           ];
           wrapRc = false;
         });
