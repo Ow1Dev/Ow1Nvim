@@ -21,7 +21,7 @@
 
         myNeovim = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (neovimConfig // {
           wrapperArgs = neovimConfig.wrapperArgs ++ [
-            "--prefix" "PATH" ":" "${pkgs.lib.makeBinPath [ pkgs.git ]}"
+            "--prefix" "PATH" ":" "${pkgs.lib.makeBinPath [ pkgs.git pkgs.lua-language-server ]}"
           ];
           wrapRc = false;
         });
@@ -42,7 +42,9 @@
           
           # Copy config files to temp location
           cp ${./init.lua} "$XDG_CONFIG_HOME/nvim-flake/init.lua"
+          cp ${./.luarc.json} "$XDG_CONFIG_HOME/nvim-flake/.luarc.json"
           cp -r ${./lua} "$XDG_CONFIG_HOME/nvim-flake/lua"
+          cp -r ${./lsp} "$XDG_CONFIG_HOME/nvim-flake/lsp"
           
           export NVIM_APPNAME="nvim-flake"
           exec ${myNeovim}/bin/nvim "$@"
@@ -59,7 +61,9 @@
             
             # Copy config files
             cp -r ${./init.lua} $out/share/nvim/init.lua
+            cp -r ${./.luarc.json} $out/share/nvim/.luarc.json
             cp -r ${./lua} $out/share/nvim/lua
+            cp -r ${./lsp} $out/share/nvim/lsp
             
             # Create wrapper script for installed version
             cat > $out/bin/nvim <<EOF
