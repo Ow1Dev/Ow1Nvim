@@ -25,6 +25,7 @@
                  pkgs.git
                  pkgs.fd 
                  pkgs.rustup
+                 pkgs.gcc
                  pkgs.lua-language-server
                  pkgs.nixd
                  ]}"

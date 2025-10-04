@@ -12,12 +12,11 @@ local M = {
 }
 
 function M.config()
-  local snacks = require("snacks")
-  local keymap = vim.keymap.set
-  local opts = { noremap = true, silent = true }
-
-  keymap("n", "<C-p>", snacks.picker.files, opts)
-  keymap("n", "<leader>e", snacks.explorer.open, opts)
+  local wk = require "which-key"
+  wk.add {
+    { "<C-p>", "<cmd>lua require 'snacks'.picker.files()<cr>", desc = "Open file picker" },
+    { "<leader>e", "<cmd>lua require 'snacks'.explorer.open()<cr>", desc = "Open explorer" },
+  }
 end
 
 return M
