@@ -103,23 +103,20 @@
           type = "app";
           program = "${devNeovim}/bin/nvim";
         };
-
-        # For home-manager integration - uses installed version
-        homeManagerModules.default = { config, lib, pkgs, ... }: {
+      }
+    ) // {
+      # Expose homeManagerModules at the top level (outside eachDefaultSystem)
+      homeManagerModules.default = { config, lib, pkgs, ... }: 
+        let
+          system = pkgs.stdenv.hostPlatform.system;
+        in {
           options.programs.neovim-flake = {
             enable = lib.mkEnableOption "Neovim flake configuration";
           };
 
           config = lib.mkIf config.programs.neovim-flake.enable {
             home.packages = [ self.packages.${system}.installed ];
-            
-            # Optional: make it the default nvim
-            home.shellAliases = {
-              vim = "nvim";
-              vi = "nvim";
-            };
           };
         };
-      }
-    );
+    };
 }
