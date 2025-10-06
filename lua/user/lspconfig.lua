@@ -49,7 +49,7 @@ function M.config()
   )
 
   -- Configure and enable LSP servers
-  for _, server in ipairs({ "lua_ls", "nixd", "rust-analyzer" }) do
+  for _, server in ipairs({ "lua_ls", "nixd", "rust_analyzer" }) do
     vim.lsp.config[server] = {
       capabilities = default_capabilities,
       on_attach = M.on_attach,
