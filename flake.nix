@@ -78,13 +78,11 @@
             export XDG_CONFIG_HOME="\''${XDG_CONFIG_HOME:-\$HOME/.config}"
             mkdir -p "\$XDG_CONFIG_HOME/nvim-flake"
             
-            # Symlink our config if not already present
-            if [ ! -e "\$XDG_CONFIG_HOME/nvim-flake/init.lua" ]; then
-              ln -sf $out/share/nvim/init.lua "\$XDG_CONFIG_HOME/nvim-flake/init.lua"
-            fi
-            if [ ! -e "\$XDG_CONFIG_HOME/nvim-flake/lua" ]; then
-              ln -sf $out/share/nvim/lua "\$XDG_CONFIG_HOME/nvim-flake/lua"
-            fi
+            # Force update symlinks to point to current store path
+            ln -sf $out/share/nvim/init.lua "\$XDG_CONFIG_HOME/nvim-flake/init.lua"
+            ln -sf $out/share/nvim/.luarc.json "\$XDG_CONFIG_HOME/nvim-flake/.luarc.json"
+            ln -sf $out/share/nvim/lua "\$XDG_CONFIG_HOME/nvim-flake/lua"
+            ln -sf $out/share/nvim/lsp "\$XDG_CONFIG_HOME/nvim-flake/lsp"
             
             export NVIM_APPNAME="nvim-flake"
             exec ${myNeovim}/bin/nvim "\$@"
