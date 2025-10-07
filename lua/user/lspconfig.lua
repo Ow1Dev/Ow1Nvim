@@ -48,13 +48,13 @@ function M.config()
     vim.lsp.protocol.make_client_capabilities()
   )
 
+  vim.lsp.config('*', {
+    capabilities = default_capabilities,
+    on_attach = M.on_attach,
+  })
+
   -- Configure and enable LSP servers
   for _, server in ipairs({ "lua_ls", "nixd", "rust_analyzer" }) do
-    vim.lsp.config[server] = {
-      capabilities = default_capabilities,
-      on_attach = M.on_attach,
-      root_dir = vim.fs.root(0, { ".git" }),
-    }
     vim.lsp.enable(server)
   end
 end
