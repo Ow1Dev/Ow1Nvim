@@ -86,7 +86,7 @@
               ln -sf $out/share/nvim/lua "\$XDG_CONFIG_HOME/nvim-flake/lua"
             fi
             if [ ! -e "\$XDG_CONFIG_HOME/nvim-flake/lsp" ]; then
-              ln -sf $out/share/nvim/lua "\$XDG_CONFIG_HOME/nvim-flake/lua"
+              ln -sf $out/share/nvim/lsp "\$XDG_CONFIG_HOME/nvim-flake/lsp"
             fi
             
             export NVIM_APPNAME="nvim-flake"
