@@ -17,9 +17,11 @@ local function lsp_keymaps(bufnr)
 end
 
 ---@diagnostic disable-next-line: unused-local
-M.on_attach = function(client, bufnr)
-  lsp_keymaps(bufnr)
-end
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    lsp_keymaps(args.buf)
+  end,
+})
 
 function M.config()
   local wk = require "which-key"
@@ -50,7 +52,6 @@ function M.config()
 
   vim.lsp.config('*', {
     capabilities = default_capabilities,
-    on_attach = M.on_attach,
   })
 
   -- Configure and enable LSP servers
