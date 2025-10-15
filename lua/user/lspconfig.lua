@@ -6,8 +6,6 @@ local M = {
   },
 }
 
--- Testing the nix update part
-
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.api.nvim_buf_set_keymap
