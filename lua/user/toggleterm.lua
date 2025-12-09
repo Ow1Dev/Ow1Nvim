@@ -6,7 +6,7 @@ local M = {
 function M.config()
   local wk = require "which-key"
   wk.add {
-    { "<leader>;", "<CMD>ToggleTerm<CR>", desc = "Neogit" },
+    { "<C-æ>", "<CMD>ToggleTerm<CR>", desc = "Floating Terminal" },
   }
 
   local execs = {
