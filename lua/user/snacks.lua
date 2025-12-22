@@ -6,7 +6,10 @@ local M = {
   priority = 1000,
   lazy = false,
   opts = {
-      explorer = { enabled = true },
+      explorer = {
+        enabled = true,
+        git_status = false,
+      },
       picker = { enabled = true },
   },
 }
