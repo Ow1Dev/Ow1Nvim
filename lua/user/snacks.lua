@@ -9,6 +9,7 @@ local M = {
       explorer = {
         enabled = true,
         git_status = false,
+        git_untracked = false,
       },
       picker = { enabled = true },
   },
