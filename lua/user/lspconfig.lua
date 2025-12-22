@@ -10,9 +10,9 @@ local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.api.nvim_buf_set_keymap
   keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-  keymap(bufnr, "n", "gd", "<cmd>vim.lsp.buf.definition()<cr>", opts)
-  keymap(bufnr, "n", "gI", "<cmd>vim.lsp.buf.implementation()<cr>", opts)
-  keymap(bufnr, "n", "gr", "<cmd>vim.lsp.buf.references()<cr>", opts)
+  keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
 
