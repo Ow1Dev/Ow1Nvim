@@ -7,3 +7,4 @@ require("plugins.completion.lspconfig")
 
 require("plugins.utils.mini")
 require("plugins.utils.neogit")
+require("plugins.utils.render-markdown")
