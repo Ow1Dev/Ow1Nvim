@@ -19,6 +19,9 @@
         pkgList = with pkgs; [
           lua-language-server
           alejandra
+          rustfmt
+          typescript-language-server
+          prettier
           stylua
           nixd
 
