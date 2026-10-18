@@ -5,12 +5,6 @@ vim.g.maplocalleader = ","
 local scrolloff = math.floor(vim.o.lines / 2) - 3
 vim.opt.scrolloff = scrolloff
 
-require("plugins.init")
-require("config.binds")
-require("config.autocmd")
-
-vim.cmd.colorscheme("nordic")
-
 -- Allows neovim to access the system clipboard
 vim.opt.clipboard = "unnamedplus"
 
@@ -52,3 +46,9 @@ vim.o.autoindent = true
 -- Ignore case and some flash nvim stuff
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+require("plugins.init")
+require("config.binds")
+require("config.autocmd")
+
+vim.cmd.colorscheme("nordic")
