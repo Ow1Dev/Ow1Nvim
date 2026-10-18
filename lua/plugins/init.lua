@@ -1,5 +1,6 @@
 require("plugins.ui.nordic")
 require("plugins.ui.lualine")
+require("plugins.ui.nvim-colorizer")
 
 require("plugins.completion.conform")
 require("plugins.completion.treesitter")
