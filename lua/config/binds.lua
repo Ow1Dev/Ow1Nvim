@@ -19,7 +19,7 @@ Keymap("n", "<leader>h", "<cmd>nohlsearch<cr>")
 Keymap("t", "<C-D>", "<C-\\><C-n>")
 
 -- Better rezise of buffer
-vim.keymap.set("n", "<C-w><M-j>", "<C-w>+")
-vim.keymap.set("n", "<C-w><M-k>", "<C-w>-")
-vim.keymap.set("n", "<C-w><M-l>", "<C-w>>")
-vim.keymap.set("n", "<C-w><M-h>", "<C-w><")
+vim.keymap.set("n", "<C-w>J", "<C-w>+")
+vim.keymap.set("n", "<C-w>K", "<C-w>-")
+vim.keymap.set("n", "<C-w>L", "<C-w>>")
+vim.keymap.set("n", "<C-w>H", "<C-w><")
