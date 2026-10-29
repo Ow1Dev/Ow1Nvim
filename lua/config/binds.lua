@@ -6,7 +6,8 @@ function Keymap(mode, key, binding, opts)
 	vim.keymap.set(mode, key, binding, options)
 end
 
-Keymap("n", "q:", ":") -- remove nonsense command
+-- Remove nonsense command
+Keymap("n", "q:", ":")
 
 Keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>") -- Diagnostics for Linter
 Keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>") -- Diagnostics for Linter
@@ -14,4 +15,11 @@ Keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>") -- Diagnostics for Li
 Keymap("n", "<leader>e", "<cmd>:Explore<cr>")
 Keymap("n", "<leader>h", "<cmd>nohlsearch<cr>")
 
-Keymap("t", "<C-D>", "<C-\\><C-n>") -- escape terminal with c-d
+-- Escape terminal with c-d
+Keymap("t", "<C-D>", "<C-\\><C-n>")
+
+-- Better rezise of buffer
+vim.keymap.set("n", "<C-w><M-j>", "<C-w>+")
+vim.keymap.set("n", "<C-w><M-k>", "<C-w>-")
+vim.keymap.set("n", "<C-w><M-l>", "<C-w>>")
+vim.keymap.set("n", "<C-w><M-h>", "<C-w><")
