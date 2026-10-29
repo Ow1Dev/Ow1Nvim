@@ -11,6 +11,7 @@ Keymap("n", "q:", ":")
 
 Keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>") -- Diagnostics for Linter
 Keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>") -- Diagnostics for Linter
+Keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
 
 Keymap("n", "<leader>e", "<cmd>:Explore<cr>")
 Keymap("n", "<leader>h", "<cmd>nohlsearch<cr>")
