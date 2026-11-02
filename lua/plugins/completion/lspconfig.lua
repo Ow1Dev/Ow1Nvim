@@ -30,6 +30,16 @@ vim.lsp.config("nixd", {
 	},
 })
 
+vim.lsp.config("rust_analyzer", {
+	settings = {
+		["rust-analyzer"] = {
+			cargo = {
+				features = "all",
+			},
+		},
+	},
+})
+
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
