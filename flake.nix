@@ -30,6 +30,8 @@
           gcc
           cargo
           gnumake
+          pkg-config
+          openssl
           ripgrep
           luarocks
         ];
@@ -39,6 +41,7 @@
           env = {
             "CONFIG_ROOT" = ./.;
             "NVIM_APPNAME" = "nvim-ow1cfg-remote";
+            "PKG_CONFIG_PATH" = "${pkgs.openssl.dev}/lib/pkgconfig";
           };
           runtimePkgs = pkgList;
           settings.config_directory = ./.;
