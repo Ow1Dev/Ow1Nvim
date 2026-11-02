@@ -24,6 +24,7 @@ local lint = require("lint")
 -- Only show diagnostics close to the cursor
 vim.diagnostic.config({
 	virtual_text = {
+		severity = { min = vim.diagnostic.severity.ERROR, max = vim.diagnostic.severity.INFO },
 		spacing = 4,
 		prefix = function(diagnostic)
 			local icons = {
@@ -36,7 +37,9 @@ vim.diagnostic.config({
 		end,
 	},
 	signs = false,
-	underline = true,
+	underline = {
+		severity = { min = vim.diagnostic.severity.ERROR, max = vim.diagnostic.severity.INFO },
+	},
 	update_in_insert = false,
 })
 
