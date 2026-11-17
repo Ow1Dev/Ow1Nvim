@@ -30,37 +30,6 @@ vim.lsp.config("nixd", {
 	},
 })
 
-vim.lsp.config("rust_analyzer", {
-	settings = {
-		["rust-analyzer"] = {
-			cargo = {
-				features = "all",
-				buildScripts = {
-					enable = true,
-				},
-			},
-			procMacro = {
-				enable = true,
-			},
-			check = {
-				command = "check",
-				allTargets = true,
-			},
-			inlayHints = {
-				typeHints = {
-					enable = false,
-				},
-				parameterHints = {
-					enable = false,
-				},
-				chainingHints = {
-					enable = false,
-				},
-			},
-		},
-	},
-})
-
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
